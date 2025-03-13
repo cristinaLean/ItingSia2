@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('activity_logs', function (Blueprint $table) {
             $table->id('log_id');
             $table->string('Activity');
-            $table->date('Date Recorded');
+            $table->date('Dare Recorded');
 
             $table->timestamps();
         });

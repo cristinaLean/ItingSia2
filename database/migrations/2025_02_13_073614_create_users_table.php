@@ -3,23 +3,20 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use Illuminate\Support\Facades\DB;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
+   
     public function up(): void
     {
-        // Create the 'users' table
+        
         Schema::create('users', function (Blueprint $table) {
             $table->id('users_id');
             $table->enum('role', ['admin', 'employee'])->notNull(); 
             $table->string('Firstname');
             $table->string('Middlename');
             $table->string('Lastname');
-            $table->string('contact_no'); 
+            $table->integer('contact_no'); 
             $table->string('Address');
             $table->foreignId('log_id'); 
             $table->foreignId('inventory_id'); 
@@ -27,16 +24,14 @@ return new class extends Migration
             $table->foreign('log_id')->references('log_id')->on('activity_logs')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('inventory_id')->references('inventory_id')->on('inventory')->onDelete('cascade')->onUpdate('cascade');
 
-            $table->timestamps(); // Optional: created_at and updated_at columns
+            $table->timestamps(); 
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
+    
     public function down(): void
     {
-        // Drop the 'users' table
+        
         Schema::dropIfExists('users');
     }
 };

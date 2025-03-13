@@ -3,7 +3,6 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use Illuminate\Support\Facades\DB;
 
 return new class extends Migration
 {
@@ -14,11 +13,10 @@ return new class extends Migration
     {
         Schema::create('product', function (Blueprint $table) {
             $table->id('product_id');
-            $table->integer('Product_Number');
-            $table->string('Product_Name');
-            $table->string('Product_Size');
+            $table->integer('Product Number');
+            $table->string('Product Name');
+            $table->string('Product Size');
             $table->integer('Quantity');
-            
           
         });
     }

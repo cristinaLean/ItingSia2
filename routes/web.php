@@ -22,8 +22,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/inventory', [UserController::class, 'getInventorywithProduct']);
-Route::get('/product', [UserController::class, 'getProductwithInventory']);
-// Route::get('/users', [UserController::class, 'getUsers']);
-// Route::get('/activity_logs', [UserController::class, 'getActivityLogs']);
+Route::get('/inventory', [UserController::class, 'getInventory']);
+Route::get('/product', [UserController::class, 'getProduct']);
+Route::get('/damages', [UserController::class, 'getInventoryDamages']);
+Route::get('/category', [UserController::class, 'getInventorywithCategory']);
 
